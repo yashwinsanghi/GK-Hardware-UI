@@ -1,0 +1,12 @@
+#brandImg   {
+    width: 25%;
+}
+#highlightMobile    { display: none;}
+#highlightTablet    { display: block;}
+@media screen and (max-width: 600px)    {
+    #brandImg   {
+        width: 50%;
+    }
+    #highlightMobile    { display: block;}
+    #highlightTablet    { display: none;}
+}

@@ -1,0 +1,577 @@
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.5.0/cerulean/bootstrap.min.css" integrity="sha384-b+jboW/YIpW2ZZYyYdXczKK6igHlnkPNfN9kYAbqYV7rNQ9PKTXlS2D6j1QZIATW" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/product.css">
+        <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
+        <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+        <title>Products Page</title>
+        <style>
+            *{  user-select: none;}
+        </style>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <span class="navbar-brand mb-0 pl-2" style="border-left: .45rem solid orange;">GK Hardware Pvt. Ltd</span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="home.html" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a href="products.html" class="nav-link">Products<span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="brand.html" class="nav-link">Brands</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container-fluid w-100 d-flex justify-content-center" style="background-color: #ffffdd;">
+            <div class="d-flex flex-wrap p-4">
+                <h1 class="text-weight-light" style="color: #6a197d; font-family: 'Lobster', cursive;"> Mortise Handles</h1>
+            </div>
+        </div>
+        <div class="container-fluid d-flex w-100 flex-row justify-content-center p-3" id="searchArea" style="background-color: #f4f6ff;">
+            <div class="d-flex flex-row w-100">
+                <input type="search" class="form-control m-2" placeholder="Search" aria-label="Search">
+                <button class="btn btn-info m-2 " type="submit">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-search" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M10.442 10.442a1 1 0 0 1 1.415 0l3.85 3.85a1 1 0 0 1-1.414 1.415l-3.85-3.85a1 1 0 0 1 0-1.415z"/>
+                        <path fill-rule="evenodd" d="M6.5 12a5.5 5.5 0 1 0 0-11 5.5 5.5 0 0 0 0 11zM13 6.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div class="container-fluid d-flex flex-row justify-content-between w-100 p-3" id="btnArea" style="background-color: #f4f6ff;">
+            <button class="btn m-2" id="filterBtn" type="button" data-toggle="collapse" data-target="#filterArea" aria-expanded="false" aria-controls="filterArea" style="background-color: #ffa5b0; display: inline-block;">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-funnel" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2zm1 .5v1.308l4.372 4.858A.5.5 0 0 1 7 8.5v5.306l2-.666V8.5a.5.5 0 0 1 .128-.334L13.5 3.308V2h-11z"/>
+                </svg>
+            </button>
+            <button class="btn m-2" id="filterActiveBtn" type="button" data-toggle="collapse" data-target="#filterArea" style="background-color:#ffa5b0; display: none;">
+                <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-funnel-fill" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M1.5 1.5A.5.5 0 0 1 2 1h12a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.128.334L10 8.692V13.5a.5.5 0 0 1-.342.474l-3 1A.5.5 0 0 1 6 14.5V8.692L1.628 3.834A.5.5 0 0 1 1.5 3.5v-2z"/>
+                  </svg>
+            </button>
+            <div class="d-flex flex-row-reverse m-2">
+                <button class="btn" id="listBtn" onclick="changeOrientation(listBtn)">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-list-task" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"/>
+                        <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z"/>
+                        <path fill-rule="evenodd" d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"/>
+                    </svg>
+                </button>
+                <button class="btn" id="gridBtn" onclick="changeOrientation(gridBtn)" style="background-color: #ffa5b0;">
+                    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-grid" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <div id="filterArea" class=" collapse" style="overflow-x: hidden; overflow-y: scroll;">
+            <div class="container-fluid p-2 d-flex flex-column m-2" style="height: 35%;">
+                <div class="d-flex flex-column mx-3 my-2">
+                    <p class="mb-0">Brand</p>
+                    <div class="d-flex flex-column p-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Brand 1
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Brand 2
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Brand 3
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Brand 4
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Brand 5
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-column mx-3 my-2 py-2" style="border-top: 0.5px solid #495057; border-bottom: 0.5px solid #495057;">
+                    <p class="mb-0">Size</p>
+                    <div class="d-flex flex-column p-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              < 10 mm
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              10 mm - 20 mm
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              20 mm - 30 mm
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              30 mm - 40 mm
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                                40 mm +
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-column mx-3 my-2 py-2" style="border-bottom: 0.5px solid #495057;">
+                    <p class="mb-0">Material</p>
+                    <div class="d-flex flex-column p-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Stainless Steel
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Brass
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Copper
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-column mx-3 my-2 py-2" style="border-bottom: 0.5px solid #495057;">
+                    <p class="mb-0">Availability</p>
+                    <div class="d-flex flex-column p-2">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                            <label class="form-check-label" for="defaultCheck1">
+                              Exclude Out of Stock
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex flex-row justify-content-around m-3 pt-2">
+                    <button class="btn btn-info btn-lg" id="applyFilter" onclick="filterSearch(applyFilter)" type="button" data-toggle="collapse" data-target="#filterArea" aria-expanded="false" aria-controls="filterArea">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-check-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path fill-rule="evenodd" d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.236.236 0 0 1 .02-.022z"/>
+                        </svg>
+                    </button>
+                    <button class="btn btn-danger btn-lg" id="resetFilter" onclick="filterSearch(resetFilter)" type="button" data-toggle="collapse" data-target="#filterArea" aria-expanded="false" aria-controls="filterArea">
+                        <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-x-circle" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                            <path fill-rule="evenodd" d="M11.854 4.146a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708-.708l7-7a.5.5 0 0 1 .708 0z"/>
+                            <path fill-rule="evenodd" d="M4.146 4.146a.5.5 0 0 0 0 .708l7 7a.5.5 0 0 0 .708-.708l-7-7a.5.5 0 0 0-.708 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="gridContent" style="display: block;">
+            <div class="gridContentMobile">
+                <div class="container-fluid d-flex flex-column justify-content-center w-100 p-2" style="background-color: #f4f6ff;">
+                    <div class="d-flex flex-row justify-content-around py-3">
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 1
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 2
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-around py-3">
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 3
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 4
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-around py-3">
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 5
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 6
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-around py-3">
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 7
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 8
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-around py-3">
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 9
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 10
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="gridContentTablet">
+                <div class="container-fluid d-flex flex-column justify-content-center w-100 p-2" style="background-color: #f4f6ff;">
+                    <div class="d-flex flex-row justify-content-around py-3">
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center" style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 1
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 2
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 3
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-around py-3">
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 4
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 5
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 6
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-around py-3">
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 7
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 8
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 9
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-around py-3">
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 10
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 11
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 12
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row justify-content-around py-3">
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 13
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 14
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow w-25">
+                            <div class="d-inline-flex justify-content-center " style="background-color: white;">
+                                <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
+                            </div>
+                            <div class="mt-2 mb-2 ml-2 text-white" style="font-family: 'Open Sans';">
+                                Handle 15
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="listContent" style="display: none;">
+            <div class="listContentMobile" style="background-color: #ffa5b0;">
+                <div class="container-fluid d-flex flex-column w-100 justify-content-center" style="background-color:#ffa5b0;">
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 1</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 2</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 3</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 4</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 5</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 6</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 7</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 8</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 9</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 10</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="listContentTablet">
+                <div class="container-fluid d-flex flex-column w-100 justify-content-center" style="background-color: #ffa5b0;">
+                    <div class="d-flex flex-row  p-2 m-2 rounded" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 1</p>
+                            <p class="mb-0">Some Info</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 2</p>
+                            <p class="mb-0">Some Info</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 3</p>
+                            <p class="mb-0">Some Info</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 4</p>
+                            <p class="mb-0">Some Info</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 5</p>
+                            <p class="mb-0">Some Info</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 6</p>
+                            <p class="mb-0">Some Info</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 7</p>
+                            <p class="mb-0">Some Info</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 8</p>
+                            <p class="mb-0">Some Info</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 9</p>
+                            <p class="mb-0">Some Info</p>
+                        </div>
+                    </div>
+                    <div class="d-flex flex-row p-2 m-2 rounded boxShadow" style="background-color: #f4f6ff;">
+                        <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" style="width: 10%;">
+                        <div class="d-flex flex-row align-items-center w-100 justify-content-around" style="font-family: 'Open Sans'; color:#1b262c;">
+                            <p class="mb-0">Handle 10</p>
+                            <p class="mb-0">Some Info</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="js/products.js"></script>
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    </body>
+</html>

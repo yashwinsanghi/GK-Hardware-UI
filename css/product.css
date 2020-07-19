@@ -1,0 +1,16 @@
+.gridContentMobile, .listContentMobile  {   display: none;   }
+.gridContentTablet, .listContentTablet  {   display: block;  }
+
+@media screen and (max-width: 600px)    {
+    .gridContentTablet, .listContentTablet  { display: none; }
+    .gridContentMobile, .listContentMobile  { display: block;}
+}
+.boxShadow  {
+    background-color:#ffa5b0;
+    -webkit-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.1);
+    box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.1);
+}
+.smallCard  {
+    width: 30% !important;
+}
