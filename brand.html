@@ -52,7 +52,7 @@
             </div>
             <div class="d-flex flex-column justify-content-center align-self-center w-100 p-2 m-2">
                 <div class="d-flex flex-row justify-content-around py-3 ">
-                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #14b1ab;">
+                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #14b1ab; cursor: pointer;" onclick="navigate()">
                         <div class="d-inline-flex justify-content-center " style="background-color: white;">
                             <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
                         </div>
@@ -60,7 +60,7 @@
                             <p class="mb-0">Handles</p>
                         </div>
                     </div>
-                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #14b1ab;">
+                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #14b1ab; cursor: pointer;" onclick="navigate()">
                         <div class="d-inline-flex justify-content-center " style="background-color: white;">
                             <img src="https://grovefittings-static.myshopblocks.com/images/2019/02/contain/256x256/a3cdde611dd01bb467bf9bde4326cac0.jpg" alt="Hinge Icon" class="w-75">
                         </div>
@@ -70,7 +70,7 @@
                     </div>
                 </div>
                 <div class="d-flex flex-row justify-content-around py-3">
-                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #14b1ab;">
+                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #14b1ab; cursor: pointer;" onclick="navigate()">
                         <div class="d-inline-flex justify-content-center " style="background-color: white;">
                             <img src="img/curtain-sample.jpg" alt="Brackets Icon" class="w-75">
                         </div>
@@ -78,7 +78,7 @@
                             <p class="mb-0">Brackets</p>
                         </div>
                     </div>
-                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #14b1ab;">
+                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #14b1ab; cursor: pointer;" onclick="navigate()">
                         <div class="d-inline-flex justify-content-center " style="background-color: white;">
                             <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/bolts-repair-construction-building-realty-1-40915.png" alt="Accessoriesx Icon" class="w-75">
                         </div>
@@ -137,7 +137,7 @@
             </div>
             <div class="d-flex flex-column justify-content-center align-self-center w-100 p-2 m-2">
                 <div class="d-flex flex-row justify-content-around py-3 ">
-                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #fd0054;">
+                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #fd0054; cursor:pointer;" onclick="navigate()">
                         <div class="d-inline-flex justify-content-center " style="background-color: white;">
                             <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
                         </div>
@@ -145,7 +145,7 @@
                             <p class="mb-0">Handle 1 </p>
                         </div>
                     </div>
-                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #fd0054;">
+                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #fd0054; cursor:pointer;" onclick="navigate()">
                         <div class="d-inline-flex justify-content-center " style="background-color: white;">
                             <img src="https://ca.weiserlock.com/img/menu/lever.png" alt="Handle Icon" class="w-75">
                         </div>
@@ -155,7 +155,7 @@
                     </div>
                 </div>
                 <div class="d-flex flex-row justify-content-around py-3">
-                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #fd0054;">
+                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #fd0054; cursor:pointer;" onclick="navigate()">
                         <div class="d-inline-flex justify-content-center " style="background-color: white;">
                             <img src="img/curtain-sample.jpg" alt="Brackets Icon" class="w-75">
                         </div>
@@ -163,7 +163,7 @@
                             <p class="mb-0">Bracket 1</p>
                         </div>
                     </div>
-                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #fd0054;">
+                    <div class="d-flex flex-column justify-content-center rounded border-0 boxShadow smallCard" style="background-color: #fd0054; cursor:pointer;" onclick="navigate()">
                         <div class="d-inline-flex justify-content-center " style="background-color: white;">
                             <img src="img/curtain-sample.jpg" alt="Brackets Icon" class="w-75">
                         </div>
@@ -186,6 +186,9 @@
                 duration: 9999,
                 delay: 10
             });
+            function navigate() {
+                window.location.replace("./single-brand.html");
+            }
         </script>
     </body>
 </html>
